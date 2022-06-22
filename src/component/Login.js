@@ -88,9 +88,13 @@ const Login = () => {
         </Link>
 
         <Typography>Forgot Password ?</Typography>
-        <Typography style={AccountStyle}>
-          <Link to="/signup">Do you have an account ? Sign Up</Link>
-        </Typography>
+        <p style={AccountStyle}>
+          <Typography>Do you have an account ?</Typography>
+         
+          <Link to="/signup">
+            <button className="signupbtn">Sign Up</button>
+          </Link>
+        </p>
       </Paper>
     </Grid>
   );
