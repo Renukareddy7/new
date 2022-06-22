@@ -1,0 +1,36 @@
+.staff{
+    height: 70px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    
+    box-shadow: 0 0 3px 2px gray;
+    align-items: center;
+    
+}
+
+.logo{
+    flex-basis: 70%;
+    position: relative;left: 5%;
+}
+.logo img{
+    height: 50px;
+    width: 60px;
+
+}
+
+.staffnav ul{
+    display: flex;
+}
+.staffnav li{
+    list-style: none;
+
+}
+.staffnav li a{
+    text-decoration: none;
+    color: black;
+}
+#logout{
+    height: 70px;
+    font-size: 25px;
+}
