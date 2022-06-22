@@ -16,6 +16,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import Checkbox from "@material-ui/core/Checkbox";
+import { Link } from "react-router-dom";
 
 
 
@@ -42,9 +43,9 @@ const SignUp = () => {
     console.log("confirmpassword", confirmpassword);
     console.log('gender',gender)
   }
-  let handleSignup = {
-    
-  }
+  // let handleSignup = {
+  //   
+  // }
   
   
   return (
@@ -65,12 +66,48 @@ const SignUp = () => {
             onChange={e => setName(e.target.value)}
           />
           <TextField
+            label="Password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            fullWidth
+          />
+
+          <TextField
+            label="Phone Number"
+            value={phonenumber}
+            fullWidth
+            onChange={e => setPhonenumber(e.target.value)}
+          />
+
+          <TextField
             label="Email"
             value={mail}
             onChange={e => setEmail(e.target.value)}
             fullWidth
             required
           />
+
+          <TextField
+            label="Company Name"
+            value={phonenumber}
+            fullWidth
+            onChange={e => setPhonenumber(e.target.value)}
+          />
+          <TextField
+            label="Department"
+            value={mail}
+            onChange={e => setEmail(e.target.value)}
+            fullWidth
+            required
+          />
+          <TextField
+            label="Address"
+            value={mail}
+            onChange={e => setEmail(e.target.value)}
+            fullWidth
+            required
+          />
+
           <FormControl component="fieldset" style={marginTop}>
             <FormLabel component="legend">Gender</FormLabel>
             <RadioGroup
@@ -78,7 +115,7 @@ const SignUp = () => {
               name="gender"
               style={{ display: "initial" }}
               value={gender}
-              onChange={e=> setGender(e.target.value)}
+              onChange={e => setGender(e.target.value)}
             >
               <FormControlLabel
                 value="female"
@@ -95,18 +132,6 @@ const SignUp = () => {
           </FormControl>
 
           <TextField
-            label="Phone Number"
-            value={phonenumber}
-            fullWidth
-            onChange={e => setPhonenumber(e.target.value)}
-          />
-          <TextField
-            label="Password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            fullWidth
-          />
-          <TextField
             label="confirm Password"
             value={confirmpassword}
             onChange={e => setConfirmpassword(e.target.value)}
@@ -116,15 +141,17 @@ const SignUp = () => {
             control={<Checkbox name="checkedA" />}
             label="I accept the term and conditions"
           />
-          <Button
-            type="submit"
-            variant="contained"
-            color="primary"
-            style={btnTop}
-            onClick={handleSignup}
-          >
-            Sign Up
-          </Button>
+          <Link to="/login">
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              style={btnTop}
+              // onClick={handleSignup}
+            >
+              Sign Up
+            </Button>
+          </Link>
         </form>
       </Paper>
     </Grid>

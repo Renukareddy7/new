@@ -4,6 +4,7 @@ import {
   Paper,
   Button,
   Typography,
+  
  
 } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
@@ -11,6 +12,11 @@ import React from "react";
 import { TextField } from "@material-ui/core";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+// import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormControl from "@material-ui/core/FormControl";
+import FormLabel from "@material-ui/core/FormLabel";
 
 import { Link } from "react-router-dom";
 import './Login.css'
@@ -25,6 +31,7 @@ const Login = () => {
 
   const avatarStyle = { backgroundColor: "#22b07a" };
   const AccountStyle = { margin: "20px  0" };
+  const marginTop = { marginTop: 5 };
   return (
     <Grid>
       <Paper elevation={10} style={FormStyle}>
@@ -47,10 +54,26 @@ const Login = () => {
           fullWidth
           required
         />
+        <FormControl component="fieldset" style={marginTop}>
+          <FormLabel component="legend">Role</FormLabel>
+          <RadioGroup
+            aria-label="role"
+            name="gender"
+            style={{ display: "initial" }}
+            // value={gender}
+            // onChange={e => setGender(e.target.value)}
+          >
+            <FormControlLabel value="Owner" control={<Radio />} label="Owner" />
+            <FormControlLabel value="Staff" control={<Radio />} label="Staff" />
+
+            {/* <FormControlLabel value="other" control={<Radio />} label="Other" /> */}
+          </RadioGroup>
+        </FormControl>
 
         <FormControlLabel
           control={<Checkbox name="checkedB" color="primary" />}
           label="Remember me"
+          className="checkedB"
         />
         <Link to="/">
           <Button
@@ -58,7 +81,6 @@ const Login = () => {
             color="primary"
             fullWidth
             variant="contained"
-           
             className="btnStyle"
           >
             Sign In
@@ -67,7 +89,7 @@ const Login = () => {
 
         <Typography>Forgot Password ?</Typography>
         <Typography style={AccountStyle}>
-          Do you have an account ?Sign Up
+          <Link to="/signup">Do you have an account ? Sign Up</Link>
         </Typography>
       </Paper>
     </Grid>

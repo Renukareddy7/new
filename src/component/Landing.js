@@ -20,7 +20,7 @@ const Landing = () => {
 
       <div className="auth">
         <Link to="/login">
-          <button>login</button>
+          <button>Login</button>
         </Link>
       </div>
     </div>
