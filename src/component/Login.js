@@ -83,7 +83,7 @@ const Login = () => {
             variant="contained"
             className="btnStyle"
           >
-            Sign In
+            Auth In
           </Button>
         </Link>
 
